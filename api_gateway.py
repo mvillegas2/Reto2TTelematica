@@ -36,7 +36,8 @@ def listar_archivos():
 @app.route('/buscar_archivos', methods=['GET'])
 def buscar_archivos():
     archivos = api_gateway.buscar_archivos()
-    return jsonify(archivos), 200
+    archivos_serializable = list(archivos)
+    return jsonify(archivos_serializable), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
