@@ -1,0 +1,14 @@
+syntax ="proto3";
+
+package archivo;
+
+message ArchivoVacio {}
+
+message ArchivoLista {
+    repeated string archivos = 1;
+}
+
+service Archivo{
+    rpc ListarArchivos (ArchivoVacio) returns (ArchivoLista);
+    rpc BuscarArchivos (ArchivoVacio) returns (ArchivoLista);
+}
