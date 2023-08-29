@@ -1,27 +1,23 @@
-# info de la materia: STxxxx <nombre>
+# info de la materia: ST0263
 #
-# Estudiante(s): nombre, email-eafit
+# Estudiante(s): Martin Villegas Aristizabal, mvillegas2@eafit.edu.co
 #
-# Profesor: nombre, email-eafit
+# Profesor: Edwin Montoya Munera, emontoya@eafit.brightspace.com
 #
-# <para borrar: EL OBJETIVO DE ESTA DOCUMENTACÍON ES QUE CUALQUIER LECTOR CON EL REPO, EN ESPECIAL EL PROFESOR, ENTIENDA EL ALCANCE DE LO DESARROLLADO Y QUE PUEDA REPRODUCIR SIN EL ESTUDIANTE EL AMBIENTE DE DESARROLLO Y EJECUTAR Y USAR LA APLICACIÓN SIN PROBLEMAS>
-
-# <para borrar: renombre este archivo a README.md cuando lo vaya a usar en un caso específico>
-
-# nombre del proyecto, lab o actividad
+# Reto 2
 #
-# 1. breve descripción de la actividad
+# 1. En este proyecto como idea principal se tiene una aplicacion para la comunicacion entre dos microservicios y un apigateway por medio de grpc, con el objetivo de buscar y listar archivos, con la ayuda de rabbitmq.
 #
 <texto descriptivo>
-## 1.1. Que aspectos cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
+## 1.1. Se logró la implementacion de los dos microservicios para listar y buscar archivos y la comunicacion con el api gateway funcionando ambos en la maquina virtual de aws
 
-## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
+## 1.2. La implementación de RabbitMQ en el proyecto no se pudo completar
 
-# 2. información general de diseño de alto nivel, arquitectura, patrones, mejores prácticas utilizadas.
+# 2. Se utilizó una arquitectura basada en microservicios, donde cada microservicio se encuentra en un archivo separado. Se implementó un API Gateway para gestionar las solicitudes y redirigirlas a los microservicios adecuados.
 
-# 3. Descripción del ambiente de desarrollo y técnico: lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
+# 3. Para este proyecto se utilizo python, flask, grpc, protobuf, entre otras. (para mas info visitar requirements.txt)
 
-## como se compila y ejecuta.
+## cSe deben crear 3 instancias desde las cuales se deben correr los 3 servicios: api_gateway.py, mserv1.py, mserv2.py.
 ## detalles del desarrollo.
 ## detalles técnicos
 ## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
