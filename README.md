@@ -17,32 +17,36 @@
 
 # 3. Para este proyecto se utilizo python, flask, grpc, protobuf, entre otras. (para mas info visitar requirements.txt)
 
-## cSe deben crear 3 instancias desde las cuales se deben correr los 3 servicios: api_gateway.py, mserv1.py, mserv2.py.
+## Se deben crear 3 instancias desde las cuales se deben correr los 3 servicios: api_gateway.py, mserv1.py, mserv2.py.
+## Para acceder a los archivos se encuentran en la carpera /Reto2/Reto2TTelematica
 ## detalles del desarrollo.
-## detalles técnicos
-## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
-## opcional - detalles de la organización del código por carpetas o descripción de algún archivo. (ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS IMPORTANTE DEL PROYECTO, comando 'tree' de linux)
-## 
-## opcionalmente - si quiere mostrar resultados o pantallazos 
+## - Cada microservicio tiene su propia lógica para listar y buscar archivos en un directorio.
+## - El API Gateway redirige las solicitudes a los microservicios utilizando peticiones HTTP.
 
-# 4. Descripción del ambiente de EJECUCIÓN (en producción) lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
+## pantallazos 
+## Api corriendo
+![Screen Shot 2023-08-28 at 10 31 04 PM](https://github.com/mvillegas2/Reto2TTelematica/assets/60147106/9f52718f-9ab4-40db-b5b0-12fd2d35770e)
+## Respuesta microservicio 1
+![Screen Shot 2023-08-28 at 10 33 08 PM](https://github.com/mvillegas2/Reto2TTelematica/assets/60147106/f45c8075-7c6e-47d1-932e-b4466d5ef462)
 
-# IP o nombres de dominio en nube o en la máquina servidor.
+## Respuesta microservicio 2
+![Screen Shot 2023-08-28 at 10 32 46 PM](https://github.com/mvillegas2/Reto2TTelematica/assets/60147106/ed5c3dca-d08e-4a35-a27d-26662b3ca02c)
 
-## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
 
-## como se lanza el servidor.
+# 4. Para este proyecto se utilizo python, flask, grpc, protobuf, entre otras. (para mas info visitar requirements.txt)
 
-## una mini guia de como un usuario utilizaría el software o la aplicación
+# IP o nombres de dominio en nube o en la máquina servidor:
+## 54.242.202.49/5000
+## 54.242.202.49/5000/listar_archivos
+## 54.242.202.49/5000/{nombreArchivo}
 
-## opcionalmente - si quiere mostrar resultados o pantallazos 
-
-# 5. otra información que considere relevante para esta actividad.
+# 5. Bastante complejo el proyecto
 
 # referencias:
-<debemos siempre reconocer los créditos de partes del código que reutilizaremos, así como referencias a youtube, o referencias bibliográficas utilizadas para desarrollar el proyecto o la actividad>
-## sitio1-url 
-## sitio2-url
-## url de donde tomo info para desarrollar este proyecto
-
-#### versión README.md -> 1.0 (2022-agosto)
+## https://flask.palletsprojects.com/
+## https://grpc.io/
+## https://docs.aws.amazon.com/es_es/transfer/latest/userguide/transfer-file.html
+## https://www.freecodecamp.org/espanol/news/administrar-multiples-versiones-de-python-y-entornos-virtuales/
+## https://github.com/protocolbuffers/protobuf/releases
+## https://github.com/rabbitmq/rabbitmq-server/releases?page=11
+## https://www.youtube.com/watch?v=iQ4kENLfaNI&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO
