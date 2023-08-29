@@ -1,10 +1,18 @@
 import grpc
-import archivo_pb2  # Importa el mensaje personalizado ArchivoVacio
+import archivo_pb2
 import archivo_pb2_grpc
 from flask import Flask, jsonify
+from dotenv import load_dotenv
+import os
 
-MSERV1_URL = "localhost:5001"
-MSERV2_URL = "localhost:5002"
+load_dotenv()
+
+MSERV1_URL = os.getenv("URL_MS1")
+MSERV2_URL = os.getenv("URL_MS2")
+
+
+# MSERV1_URL = "localhost:5001"
+# MSERV2_URL = "localhost:5002"
 
 class ApiGateway:
     def __init__(self):
@@ -15,27 +23,26 @@ class ApiGateway:
         self.stub_mserv2 = archivo_pb2_grpc.ArchivoStub(self.channel_mserv2)
     
     def listar_archivos(self):
-        # Utiliza tu mensaje vacío personalizado ArchivoVacio()
         response = self.stub_mserv1.ListarArchivos(archivo_pb2.ArchivoVacio())
         return response.archivos
     
-    def buscar_archivos(self):
-        # Utiliza tu mensaje vacío personalizado ArchivoVacio()
-        response = self.stub_mserv2.BuscarArchivos(archivo_pb2.ArchivoVacio())
+    def buscar_archivos(self, archivo_buscado):
+        request = archivo_pb2.ArchivoRequest(archivo_buscado=archivo_buscado)
+        response = self.stub_mserv2.BuscarArchivos(request)
         return response.archivos
 
 app = Flask(__name__)
 api_gateway = ApiGateway()
 
 @app.route('/listar_archivos', methods=['GET'])
-def listar_archivos():
+def listar_archivos_endpoint():
     archivos = api_gateway.listar_archivos()
     archivos_serializable = list(archivos)
     return jsonify(archivos_serializable), 200
 
-@app.route('/buscar_archivos', methods=['GET'])
-def buscar_archivos():
-    archivos = api_gateway.buscar_archivos()
+@app.route('/buscar_archivos/<nombre_archivo>', methods=['GET'])
+def buscar_archivos_endpoint(nombre_archivo):
+    archivos = api_gateway.buscar_archivos(nombre_archivo)
     archivos_serializable = list(archivos)
     return jsonify(archivos_serializable), 200
 
